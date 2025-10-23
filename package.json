@@ -2,13 +2,18 @@
   "name": "amana-bookstore",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:db": "node test-db-connection.js",
+    "seed:books": "node seed-books-simple.js",
+    "seed:reviews": "node seed-reviews.js"
   },
   "dependencies": {
+    "dotenv": "^17.2.3",
     "mongoose": "^8.19.2",
     "next": "15.5.0",
     "react": "19.1.0",
