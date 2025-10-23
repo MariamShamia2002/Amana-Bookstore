@@ -2,6 +2,7 @@
 import { NextResponse } from 'next/server';
 import { books } from '../../data/books';
 
+
 // GET /api/books - Return all books
 export async function GET() {
   try {
