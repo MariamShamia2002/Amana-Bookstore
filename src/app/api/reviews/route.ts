@@ -14,8 +14,8 @@ export async function GET(request: Request) {
     const page = parseInt(searchParams.get("page") || "1");
     const limit = parseInt(searchParams.get("limit") || "50");
 
-    // Build query filter
-    const filter: any = {};
+  // Build query filter
+  const filter: Record<string, unknown> = {};
 
     if (bookId) {
       filter.bookId = bookId;
@@ -62,7 +62,15 @@ export async function POST(request: Request) {
   try {
     await connectToDB();
 
-    const body = await request.json();
+    const body = (await request.json()) as {
+      bookId?: string;
+      author?: string;
+      rating?: number;
+      title?: string;
+      comment?: string;
+      verified?: boolean;
+    };
+
     const { bookId, author, rating, title, comment, verified = false } = body;
 
     // Validate required fields

@@ -296,6 +296,7 @@ const BookGrid: React.FC<BookGridProps> = ({ books, onAddToCart }) => {
               onPageChange={handlePageChange}
               itemsPerPage={itemsPerPage}
               totalItems={filteredAndSortedBooks.length}
+              onItemsPerPageChange={handleItemsPerPageChange}
             />
           </>
         ) : (

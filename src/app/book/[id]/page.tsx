@@ -4,7 +4,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
-import { Book, CartItem, Review } from "../../types";
+import { Book, Review } from "../../types";
 
 export default function BookDetailPage() {
   const [book, setBook] = useState<Book | null>(null);

@@ -18,8 +18,8 @@ export async function GET(request: Request) {
     const inStock = searchParams.get("inStock");
     const search = searchParams.get("search");
 
-    // Build query filter
-    const filter: any = {};
+  // Build query filter
+  const filter: Record<string, unknown> = {};
 
     if (genre) {
       filter.genre = { $in: [genre] };
